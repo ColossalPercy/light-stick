@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-app dark>
+      <v-toolbar fixed>
+        <v-toolbar-title>Light Stick</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn icon large flat>
+            <v-icon
+              :color="ledState ? 'green' : 'red'"
+              @click="$store.commit('toggle')"
+            >power_settings_new</v-icon>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      <!-- <nav
+        class="v-toolbar v-toolbar--fixed theme--dark"
+        data-booted="true"
+        style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);"
+      >
+        <div class="v-toolbar__content" style="height: 64px;">
+          <div class="v-toolbar__title headline text-uppercase">
+            <span>Light Stick</span>
+          </div>
+        </div>
+      </nav>-->
+    </v-app>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  computed: {
+    ledState () {
+      return this.$store.state.ledState
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
