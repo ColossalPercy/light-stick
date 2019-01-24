@@ -18,7 +18,7 @@
               class="pa-2"
               slot-scope="{ active, toggle }"
               :color="active ? 'blue' : ''"
-              @click="toggle"
+              @click="gradChange(gradient.data); toggle"
             >
               <p class="title mb-1">{{ gradient.name }}</p>
               <div :style="{height: '30px', background: gradCalc(gradient.data)}"></div>
@@ -32,6 +32,8 @@
 
 <script>
 import gradients from '../data/gradients.json'
+import send from '../utils/send'
+
 export default {
   data () {
     return {
@@ -56,6 +58,9 @@ export default {
         css += ')'
       }
       return css
+    },
+    gradChange (g) {
+      send.gradient(g)
     }
   }
 }

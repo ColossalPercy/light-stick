@@ -1,26 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import logger from './utils/logger'
 
 Vue.use(Vuex)
 
 let host =
   process.env.NODE_ENV === 'development' ? '192.168.0.19' : location.hostname
-const ws = new WebSocket('ws://' + host + ':81')
+// const ws = new WebSocket('ws://' + host + ':81')
+const ws = {}
 ws.onopen = () => {
-  console.log(
-    `%cClient: %cConnected to ws://${host}:81`,
-    'color: blue; font-weight: bold',
-    'color: black; font-weight: normal'
-  )
+  logger.client(`Connected to ws://${host}:81`)
   store.commit('wsOpen')
 }
 
 ws.onclose = () => {
-  console.log(
-    `%cClient: %cDisconnected from ws://${host}:81!`,
-    'color: blue; font-weight: bold',
-    'color: black; font-weight: normal'
-  )
+  logger.client(`Disconnected from ws://${host}:81`)
   store.commit('wsClose')
 }
 
@@ -31,11 +25,7 @@ ws.onmessage = e => {
       store.commit('setState', msg.data)
       break
     case 'msg':
-      console.log(
-        `%cServer: %c${msg.data}`,
-        'color: red; font-weight: bold',
-        'color: black; font-weight: normal'
-      )
+      logger.server(msg.data)
       break
   }
 }
