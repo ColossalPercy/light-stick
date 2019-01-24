@@ -1,5 +1,9 @@
 <template>
-  <h1>Image</h1>
+  <div>
+    <v-layout>
+      <p class="display-1">Image</p>
+    </v-layout>
+  </div>
 </template>
 
 <script>

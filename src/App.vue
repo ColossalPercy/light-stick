@@ -16,19 +16,25 @@
 
       <v-content>
         <v-container>
-          <router-view></router-view>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </v-container>
       </v-content>
-      <v-bottom-nav :active.sync="activeView" fixed mandatory :value="true" color="blue">
-        <v-btn flat value="gradient">
+      <v-bottom-nav fixed mandatory :active.sync="activeTab" :value="true" color="blue">
+        <v-btn to="colour" flat value="colour">
+          <span>Colour</span>
+          <v-icon>color_lens</v-icon>
+        </v-btn>
+        <v-btn to="gradient" flat value="gradient">
           <span>Gradient</span>
           <v-icon>gradient</v-icon>
         </v-btn>
-        <v-btn flat value="presets">
-          <span>Presets</span>
-          <v-icon>save</v-icon>
+        <v-btn to="text" flat value="text">
+          <span>Text</span>
+          <v-icon>text_fields</v-icon>
         </v-btn>
-        <v-btn flat value="image">
+        <v-btn to="image" flat value="image">
           <span>Image</span>
           <v-icon>photo</v-icon>
         </v-btn>
@@ -41,8 +47,7 @@
 export default {
   data () {
     return {
-      activeView: 'presets',
-      tabOrder: ['gradient', 'presets', 'image']
+      activeTab: location.pathname.substring(1)
     }
   },
   computed: {
@@ -52,3 +57,17 @@ export default {
   }
 }
 </script>
+
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    transition-timing-function: ease;
+  }
+
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0;
+  }
+</style>

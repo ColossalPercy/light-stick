@@ -1,0 +1,45 @@
+[
+  {
+    "name": "RGB",
+    "data": ["#FF0000", "#00FF00", "#0000FF"]
+  },
+  {
+    "name": "BRG",
+    "data": ["#0000FF", "#FF0000", "#00FF00"]
+  },
+  {
+    "name": "GBR",
+    "data": ["#00FF00", "#0000FF", "#FF0000"]
+  },
+  {
+    "name": "Black n Red",
+    "data": [
+      { "color": "#FF0000", "pos": 0 },
+      { "color": "#FF0000", "pos": 20 },
+      { "color": "#000000", "pos": 21 },
+      { "color": "#000000", "pos": 30 },
+      { "color": "#FF0000", "pos": 31 },
+      { "color": "#FF0000", "pos": 36 },
+      { "color": "#000000", "pos": 37 },
+      { "color": "#000000", "pos": 42 },
+      { "color": "#FF0000", "pos": 43 },
+      { "color": "#FF0000", "pos": 48 },
+      { "color": "#000000", "pos": 49 },
+      { "color": "#000000", "pos": 54 },
+      { "color": "#FF0000", "pos": 55 },
+      { "color": "#FF0000", "pos": 60 },
+      { "color": "#000000", "pos": 61 },
+      { "color": "#000000", "pos": 70 },
+      { "color": "#FF0000", "pos": 71 },
+      { "color": "#FF0000", "pos": 76 },
+      { "color": "#000000", "pos": 77 },
+      { "color": "#000000", "pos": 82 },
+      { "color": "#FF0000", "pos": 83 },
+      { "color": "#FF0000", "pos": 88 },
+      { "color": "#000000", "pos": 89 },
+      { "color": "#000000", "pos": 94 },
+      { "color": "#FF0000", "pos": 95 },
+      { "color": "#FF0000", "pos": 100 }
+    ]
+  }
+]

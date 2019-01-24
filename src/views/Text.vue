@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-layout>
-      <h1>Presets</h1>
+      <p class="display-1">Text</p>
     </v-layout>
   </div>
 </template>
