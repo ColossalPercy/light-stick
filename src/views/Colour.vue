@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import send from '../utils/send'
+import sender from '../utils/sender'
 
 export default {
   data () {
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     colorChange () {
-      send.color({
+      sender.color({
         h: this.hue,
         s: 100,
         l: this.lightness

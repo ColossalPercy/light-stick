@@ -13,12 +13,12 @@
     <v-layout column>
       <v-item-group>
         <v-flex v-for="(gradient, i) in gradients" :key="i" xs12 mb-4>
-          <v-item>
+          <v-item @change="gradChange(gradient.data)">
             <v-card
               class="pa-2"
               slot-scope="{ active, toggle }"
               :color="active ? 'blue' : ''"
-              @click="gradChange(gradient.data); toggle"
+              @click="toggle"
             >
               <p class="title mb-1">{{ gradient.name }}</p>
               <div :style="{height: '30px', background: gradCalc(gradient.data)}"></div>
@@ -32,7 +32,7 @@
 
 <script>
 import gradients from '../data/gradients.json'
-import send from '../utils/send'
+import sender from '../utils/sender'
 
 export default {
   data () {
@@ -60,7 +60,7 @@ export default {
       return css
     },
     gradChange (g) {
-      send.gradient(g)
+      sender.gradient(g)
     }
   }
 }
