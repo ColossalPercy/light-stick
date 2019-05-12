@@ -6,7 +6,7 @@
       <v-btn icon large flat>
         <v-icon
           :color="ledState ? 'green' : 'red'"
-          @click="$store.commit('toggle')"
+          @click="$store.dispatch('toggle')"
         >
           power_settings_new
         </v-icon>

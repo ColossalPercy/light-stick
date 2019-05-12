@@ -32,7 +32,6 @@
 
 <script>
 import gradients from '../data/gradients.json'
-import sender from '../utils/sender'
 
 export default {
   data () {
@@ -60,7 +59,7 @@ export default {
       return css
     },
     gradChange (g) {
-      sender.gradient(g)
+      this.$store.dispatch('sendGradient', g)
     }
   }
 }

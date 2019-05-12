@@ -8,7 +8,7 @@ let logger = {
   },
   server: (msg) => {
     console.log(
-      `%Server: %c${msg}`,
+      `%cServer: %c${msg}`,
       'color: red; font-weight: bold',
       'color: black; font-weight: normal'
     )

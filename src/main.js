@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import './plugins/vuetify'
 import App from './App.vue'
 import './assets/MI-Reg.css'
-import store from './store'
+import { store } from './store'
 import router from './router'
 
 Vue.config.productionTip = false

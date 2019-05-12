@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import sender from '../utils/sender'
 
 export default {
   data () {
@@ -59,7 +58,7 @@ export default {
   },
   methods: {
     colorChange () {
-      sender.color({
+      this.$store.dispatch('sendColor', {
         h: this.hue,
         s: 100,
         l: this.lightness
